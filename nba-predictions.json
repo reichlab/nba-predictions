@@ -1,0 +1,302 @@
+{
+  "name": "NBA predictions",
+  "is_public": false,
+  "description": "Predictions of NBA outcomes",
+  "home_url": "",
+  "logo_url": "",
+  "core_data": "",
+  "viz_options": null,
+  "units": [
+    {
+      "id": 4399,
+      "url": "https://zoltardata.com/api/unit/4399/",
+      "name": "Hawks",
+      "abbreviation": "atl"
+    },
+    {
+      "id": 4401,
+      "url": "https://zoltardata.com/api/unit/4401/",
+      "name": "Nets",
+      "abbreviation": "bkn"
+    },
+    {
+      "id": 4400,
+      "url": "https://zoltardata.com/api/unit/4400/",
+      "name": "Celtics",
+      "abbreviation": "bos"
+    },
+    {
+      "id": 4402,
+      "url": "https://zoltardata.com/api/unit/4402/",
+      "name": "Hornets",
+      "abbreviation": "cha"
+    },
+    {
+      "id": 4403,
+      "url": "https://zoltardata.com/api/unit/4403/",
+      "name": "Bulls",
+      "abbreviation": "chi"
+    },
+    {
+      "id": 4404,
+      "url": "https://zoltardata.com/api/unit/4404/",
+      "name": "Cavaliers",
+      "abbreviation": "cle"
+    },
+    {
+      "id": 4405,
+      "url": "https://zoltardata.com/api/unit/4405/",
+      "name": "Mavericks",
+      "abbreviation": "dal"
+    },
+    {
+      "id": 4406,
+      "url": "https://zoltardata.com/api/unit/4406/",
+      "name": "Nuggets",
+      "abbreviation": "den"
+    },
+    {
+      "id": 4407,
+      "url": "https://zoltardata.com/api/unit/4407/",
+      "name": "Pistons",
+      "abbreviation": "det"
+    },
+    {
+      "id": 4408,
+      "url": "https://zoltardata.com/api/unit/4408/",
+      "name": "Warriors",
+      "abbreviation": "gs"
+    },
+    {
+      "id": 4409,
+      "url": "https://zoltardata.com/api/unit/4409/",
+      "name": "Rockets",
+      "abbreviation": "hou"
+    },
+    {
+      "id": 4410,
+      "url": "https://zoltardata.com/api/unit/4410/",
+      "name": "Pacers",
+      "abbreviation": "ind"
+    },
+    {
+      "id": 4411,
+      "url": "https://zoltardata.com/api/unit/4411/",
+      "name": "Clippers",
+      "abbreviation": "lac"
+    },
+    {
+      "id": 4412,
+      "url": "https://zoltardata.com/api/unit/4412/",
+      "name": "Lakers",
+      "abbreviation": "lal"
+    },
+    {
+      "id": 4413,
+      "url": "https://zoltardata.com/api/unit/4413/",
+      "name": "Grizzlies",
+      "abbreviation": "mem"
+    },
+    {
+      "id": 4414,
+      "url": "https://zoltardata.com/api/unit/4414/",
+      "name": "Heat",
+      "abbreviation": "mia"
+    },
+    {
+      "id": 4415,
+      "url": "https://zoltardata.com/api/unit/4415/",
+      "name": "Bucks",
+      "abbreviation": "mil"
+    },
+    {
+      "id": 4416,
+      "url": "https://zoltardata.com/api/unit/4416/",
+      "name": "Timberwolves",
+      "abbreviation": "min"
+    },
+    {
+      "id": 4417,
+      "url": "https://zoltardata.com/api/unit/4417/",
+      "name": "Pelicans",
+      "abbreviation": "no"
+    },
+    {
+      "id": 4418,
+      "url": "https://zoltardata.com/api/unit/4418/",
+      "name": "Knicks",
+      "abbreviation": "ny"
+    },
+    {
+      "id": 4419,
+      "url": "https://zoltardata.com/api/unit/4419/",
+      "name": "Thunder",
+      "abbreviation": "okc"
+    },
+    {
+      "id": 4420,
+      "url": "https://zoltardata.com/api/unit/4420/",
+      "name": "Magic",
+      "abbreviation": "orl"
+    },
+    {
+      "id": 4421,
+      "url": "https://zoltardata.com/api/unit/4421/",
+      "name": "76ers",
+      "abbreviation": "phi"
+    },
+    {
+      "id": 4422,
+      "url": "https://zoltardata.com/api/unit/4422/",
+      "name": "Suns",
+      "abbreviation": "phx"
+    },
+    {
+      "id": 4423,
+      "url": "https://zoltardata.com/api/unit/4423/",
+      "name": "Trail Blazers",
+      "abbreviation": "por"
+    },
+    {
+      "id": 4425,
+      "url": "https://zoltardata.com/api/unit/4425/",
+      "name": "Spurs",
+      "abbreviation": "sa"
+    },
+    {
+      "id": 4424,
+      "url": "https://zoltardata.com/api/unit/4424/",
+      "name": "Kings",
+      "abbreviation": "sac"
+    },
+    {
+      "id": 4426,
+      "url": "https://zoltardata.com/api/unit/4426/",
+      "name": "Raptors",
+      "abbreviation": "tor"
+    },
+    {
+      "id": 4427,
+      "url": "https://zoltardata.com/api/unit/4427/",
+      "name": "Jazz",
+      "abbreviation": "uta"
+    },
+    {
+      "id": 4429,
+      "url": "https://zoltardata.com/api/unit/4429/",
+      "name": "Wizards",
+      "abbreviation": "wsh"
+    }
+  ],
+  "targets": [
+    {
+      "id": 3465,
+      "url": "https://zoltardata.com/api/target/3465/",
+      "name": "win finals",
+      "type": "binary",
+      "description": "Whether or not a team will win the NBA finals",
+      "outcome_variable": "win_finals",
+      "is_step_ahead": false
+    },
+    {
+      "id": 3464,
+      "url": "https://zoltardata.com/api/target/3464/",
+      "name": "make playoffs",
+      "type": "binary",
+      "description": "Whether or not a team will make the playoffs",
+      "outcome_variable": "make_playoffs",
+      "is_step_ahead": false
+    },
+    {
+      "id": 3462,
+      "url": "https://zoltardata.com/api/target/3462/",
+      "name": "season wins",
+      "type": "discrete",
+      "description": "Total number of wins in the regular season",
+      "outcome_variable": "wins",
+      "is_step_ahead": false,
+      "range": [
+        0,
+        100
+      ],
+      "cats": []
+    }
+  ],
+  "timezeros": [
+    {
+      "timezero_date": "2022-10-19",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "id": 2648,
+      "url": "https://zoltardata.com/api/timezero/2648/",
+      "timezero_date": "2022-11-04",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "id": 2647,
+      "url": "https://zoltardata.com/api/timezero/2647/",
+      "timezero_date": "2022-10-28",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "id": 2646,
+      "url": "https://zoltardata.com/api/timezero/2646/",
+      "timezero_date": "2022-10-21",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "id": 2645,
+      "url": "https://zoltardata.com/api/timezero/2645/",
+      "timezero_date": "2022-10-14",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "id": 2644,
+      "url": "https://zoltardata.com/api/timezero/2644/",
+      "timezero_date": "2021-10-19",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "id": 2643,
+      "url": "https://zoltardata.com/api/timezero/2643/",
+      "timezero_date": "2021-10-13",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "id": 2642,
+      "url": "https://zoltardata.com/api/timezero/2642/",
+      "timezero_date": "2020-12-17",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "id": 2641,
+      "url": "https://zoltardata.com/api/timezero/2641/",
+      "timezero_date": "2020-12-01",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "id": 2640,
+      "url": "https://zoltardata.com/api/timezero/2640/",
+      "timezero_date": "2022-10-13",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "id": 2636,
+      "url": "https://zoltardata.com/api/timezero/2636/",
+      "timezero_date": "2022-10-01",
+      "data_version_date": null,
+      "is_season_start": false
+    }
+  ]
+}
