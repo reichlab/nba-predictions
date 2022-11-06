@@ -18,6 +18,7 @@ tabs <- read_html("https://www.espn.com/nba/story/_/page/BPI-Playoff-Odds/espn-n
 ## put in correct format
 nbacsv <- tabs |> 
   mutate(unit = tolower(TEAM),
+         unit = ifelse(unit=="uth", "uta", unit),
          # extract wins 
          wins = gsub( "-.*", "", `WIN-LOSS`),
          ## extract playoff probability, take care of extreme values

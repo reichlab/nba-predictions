@@ -224,6 +224,43 @@
   ],
   "timezeros": [
     {
+      "timezero_date": "2022-11-01",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "timezero_date": "2022-11-02",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "timezero_date": "2022-11-03",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "timezero_date": "2022-11-04",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "timezero_date": "2022-11-05",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "timezero_date": "2022-11-06",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "timezero_date": "2022-11-07",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "id": 2649,
+      "url": "https://zoltardata.com/api/timezero/2649/",
       "timezero_date": "2022-10-19",
       "data_version_date": null,
       "is_season_start": false
