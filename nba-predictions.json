@@ -224,37 +224,49 @@
   ],
   "timezeros": [
     {
-      "timezero_date": "2022-11-01",
+      "timezero_date": "2022-11-13",
       "data_version_date": null,
       "is_season_start": false
     },
     {
-      "timezero_date": "2022-11-02",
+      "id": 2655,
+      "url": "https://zoltardata.com/api/timezero/2655/",
+      "timezero_date": "2022-11-07",
       "data_version_date": null,
       "is_season_start": false
     },
     {
-      "timezero_date": "2022-11-03",
-      "data_version_date": null,
-      "is_season_start": false
-    },
-    {
-      "timezero_date": "2022-11-04",
-      "data_version_date": null,
-      "is_season_start": false
-    },
-    {
-      "timezero_date": "2022-11-05",
-      "data_version_date": null,
-      "is_season_start": false
-    },
-    {
+      "id": 2654,
+      "url": "https://zoltardata.com/api/timezero/2654/",
       "timezero_date": "2022-11-06",
       "data_version_date": null,
       "is_season_start": false
     },
     {
-      "timezero_date": "2022-11-07",
+      "id": 2653,
+      "url": "https://zoltardata.com/api/timezero/2653/",
+      "timezero_date": "2022-11-05",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "id": 2652,
+      "url": "https://zoltardata.com/api/timezero/2652/",
+      "timezero_date": "2022-11-03",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "id": 2651,
+      "url": "https://zoltardata.com/api/timezero/2651/",
+      "timezero_date": "2022-11-02",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "id": 2650,
+      "url": "https://zoltardata.com/api/timezero/2650/",
+      "timezero_date": "2022-11-01",
       "data_version_date": null,
       "is_season_start": false
     },
@@ -305,7 +317,8 @@
       "url": "https://zoltardata.com/api/timezero/2643/",
       "timezero_date": "2021-10-13",
       "data_version_date": null,
-      "is_season_start": false
+      "is_season_start": true,
+      "season_name": "2021-2022"
     },
     {
       "id": 2642,
@@ -319,7 +332,8 @@
       "url": "https://zoltardata.com/api/timezero/2641/",
       "timezero_date": "2020-12-01",
       "data_version_date": null,
-      "is_season_start": false
+      "is_season_start": true,
+      "season_name": "2020-2021"
     },
     {
       "id": 2640,
@@ -333,7 +347,8 @@
       "url": "https://zoltardata.com/api/timezero/2636/",
       "timezero_date": "2022-10-01",
       "data_version_date": null,
-      "is_season_start": false
+      "is_season_start": true,
+      "season_name": "2022-2023"
     }
   ]
 }
