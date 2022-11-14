@@ -32,13 +32,13 @@ nbacsv <- tabs |>
          `NBATITLE` = ifelse(`NBATITLE` == "<0.1%", 0, `NBATITLE`),
          win_finals = as.numeric(gsub( "%.*", "", `NBATITLE`))/100) 
 
-filename <- paste0("data/espn-bpi/ESPN-BPI-", today, ".csv")
+filename <- paste0("model-output/espn-bpi/ESPN-BPI-", today, ".csv")
 write_csv(nbacsv, file=filename)
 
 bpi_json <- nba_csv_to_json(filename)
 
 ## write out raw data
-write_csv(tabs, file=paste0("data/espn-bpi/espn-bpi-raw-", today, ".csv"))
+write_csv(tabs, file=paste0("model-output/espn-bpi/espn-bpi-raw-", today, ".csv"))
 
 ## upload to zoltar
 zoltar_connection <- new_connection()
@@ -47,13 +47,12 @@ bpi_model_url <- "https://zoltardata.com/api/model/784/"
 project_url <- "https://zoltardata.com/api/project/328/"
 
 ## check to see if timezero exists
-# all_t0 <- timezeros(zoltar_connection, project_url)
-# if(!(today %in% all_t0$timezero_date)){
-#   create_timezero(zoltar_connection, project_url, 
-#                   timezero_date = today)
-# }
-# all_t0 <- timezeros(zoltar_connection, project_url)
-
+all_t0 <- timezeros(zoltar_connection, project_url)
+if(!(today %in% all_t0$timezero_date)){
+  create_timezero(zoltar_connection, project_url,
+                  timezero_date = today, 
+                  data_version_date = NA)
+}
 
 ## requires appropriate timezero
 job_url <- upload_forecast(zoltar_connection, 
