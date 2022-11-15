@@ -59,6 +59,9 @@ job_url <- upload_forecast(zoltar_connection,
                            bpi_model_url,
                            timezero_date = as.character(today),
                            forecast_data = parse_json(bpi_json))
+
+Sys.sleep(5)
+
 job_info(zoltar_connection, job_url)
 
 

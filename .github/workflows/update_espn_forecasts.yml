@@ -1,0 +1,24 @@
+name: Update ESPN forecast
+on:
+  schedule:
+    - cron: '0 16 * * 0'
+
+jobs:
+  run_script:
+    if: github.repository_owner == 'reichlab'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout nba-predictions repo
+      uses: actions/checkout@v2
+      with:
+        path: nba-predictions
+    
+    - name: Setup GitHub Action for R language
+      uses: r-lib/actions/setup-r@v1
+
+    - name: Install system dependencies
+      run: sudo apt-get install libudunits2-dev libcurl4-openssl-dev libgdal-dev
+
+    - name: Install R script dependencies
+      working-directory: ./nba-predictions
+      run: Rscript .github/workflows/install_dependencies.R
