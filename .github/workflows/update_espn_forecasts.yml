@@ -1,5 +1,6 @@
 name: Update ESPN forecast
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 16 * * 0'
 
@@ -22,3 +23,4 @@ jobs:
     - name: Install R script dependencies
       working-directory: ./nba-predictions
       run: Rscript .github/workflows/install_dependencies.R
+
