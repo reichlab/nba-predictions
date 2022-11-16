@@ -2,7 +2,7 @@ name: Update ESPN forecast
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 12 * * 1' # Mondays (1) at 12:00pm
+    - cron: '0 12 * * 0-6' # everyday (0-6) at 12:00pm https://crontab.guru/#0_12_*_*_0-6
 
 jobs:
   run_script:
