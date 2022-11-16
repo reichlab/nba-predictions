@@ -27,14 +27,14 @@ jobs:
       env:
         GITHUB_PAT: ${{secrets.GH_TOKEN}}
 
-    # - name: scrape and push ESPN-BPI predictions
-    #   run: Rscript ./nba-predictions/code/scrape-and-push-espn-2022.R
-    #   env:
-    #     Z_USERNAME: ${{ secrets.Z_USERNAME }}
-    #     Z_PASSWORD: ${{ secrets.Z_PASSWORD }}
-    # 
-    # - name: Push generated files to GitHub
-    #   run: bash .github/workflows/push-gh.sh
-    #   working-directory: ./nba-predictions
-    #   env:
-    #     GITHUB_PAT: ${{secrets.GH_TOKEN}}
+    - name: scrape and push ESPN-BPI predictions
+      run: Rscript ./nba-predictions/code/scrape-and-push-espn-2022.R
+      env:
+        Z_USERNAME: ${{ secrets.Z_USERNAME }}
+        Z_PASSWORD: ${{ secrets.Z_PASSWORD }}
+
+    - name: Push generated files to GitHub
+      run: bash .github/workflows/push-gh.sh
+      working-directory: ./nba-predictions
+      env:
+        GITHUB_PAT: ${{secrets.GH_TOKEN}}
