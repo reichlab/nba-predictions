@@ -32,7 +32,7 @@ nbacsv <- tabs |>
          `NBATITLE` = ifelse(`NBATITLE` == "<0.1%", 0, `NBATITLE`),
          win_finals = as.numeric(gsub( "%.*", "", `NBATITLE`))/100) 
 
-filename <- paste0("model-output/espn-bpi/ESPN-BPI-", today, ".csv")
+filename <- paste0("model-output/ESPN-BPI/ESPN-BPI-", today, ".csv")
 write_csv(nbacsv, file=filename)
 
 bpi_json <- nba_csv_to_json(filename)
