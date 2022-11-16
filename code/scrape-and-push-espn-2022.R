@@ -38,7 +38,7 @@ write_csv(nbacsv, file=filename)
 bpi_json <- nba_csv_to_json(filename)
 
 ## write out raw data
-write_csv(tabs, file=paste0("model-output/espn-bpi/espn-bpi-raw-", today, ".csv"))
+write_csv(tabs, file=paste0("model-output/ESPN-BPI/espn-bpi-raw-", today, ".csv"))
 
 ## upload to zoltar
 zoltar_connection <- new_connection()
