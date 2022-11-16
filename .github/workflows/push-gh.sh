@@ -14,8 +14,8 @@ commit_website_files() {
 upload_files() {
   echo "Uploading files..."
   git fetch
-  git pull --rebase https://${GH_TOKEN}@github.com/reichlab/nba-predictions.git
-  git push https://${GH_TOKEN}@github.com/reichlab/nba-predictions.git HEAD:main
+  git pull --rebase https://${GITHUB_PAT}@github.com/reichlab/nba-predictions.git
+  git push https://${GITHUB_PAT}@github.com/reichlab/nba-predictions.git HEAD:main
   echo "pushed to github"
 }
 
