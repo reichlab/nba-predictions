@@ -7,12 +7,14 @@ library(dplyr)
 library(stringr)
 library(readr)
 library(zoltr)
+library(tidyr)
 
 source("code/nba_csv_to_json.R")
 
 today <- Sys.Date()
 
 ## read data, collapse to one DF
+message("reading and munging data")
 tabs <- read_html("https://www.espn.com/nba/story/_/page/BPI-Playoff-Odds/espn-nba-basketball-power-index-playoff-odds") |> 
   html_table() |> 
   (\(x) do.call(what=rbind, args=x))()
@@ -32,6 +34,7 @@ nbacsv <- tabs |>
          `NBATITLE` = ifelse(`NBATITLE` == "<0.1%", 0, `NBATITLE`),
          win_finals = as.numeric(gsub( "%.*", "", `NBATITLE`))/100) 
 
+message("writing data")
 filename <- paste0("model-output/ESPN-BPI/ESPN-BPI-", today, ".csv")
 write_csv(nbacsv, file=filename)
 
@@ -40,6 +43,7 @@ bpi_json <- nba_csv_to_json(filename)
 ## write out raw data
 write_csv(tabs, file=paste0("model-output/ESPN-BPI/espn-bpi-raw-", today, ".csv"))
 
+message("uploading data to zoltar")
 ## upload to zoltar
 zoltar_connection <- new_connection()
 zoltar_authenticate(zoltar_connection, Sys.getenv("Z_USERNAME"), Sys.getenv("Z_PASSWORD"))
@@ -62,6 +66,7 @@ job_url <- upload_forecast(zoltar_connection,
 
 Sys.sleep(5)
 
+message("printing zoltar upload job info")
 job_info(zoltar_connection, job_url)
 
 
