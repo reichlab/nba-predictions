@@ -1,6 +1,6 @@
 {
   "name": "NBA predictions",
-  "is_public": false,
+  "is_public": true,
   "description": "Predictions of NBA outcomes",
   "home_url": "",
   "logo_url": "",
@@ -224,6 +224,22 @@
   ],
   "timezeros": [
     {
+      "id": 2686,
+      "url": "https://zoltardata.com/api/timezero/2686/",
+      "timezero_date": "2022-11-16",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "id": 2683,
+      "url": "https://zoltardata.com/api/timezero/2683/",
+      "timezero_date": "2022-11-14",
+      "data_version_date": null,
+      "is_season_start": false
+    },
+    {
+      "id": 2680,
+      "url": "https://zoltardata.com/api/timezero/2680/",
       "timezero_date": "2022-11-13",
       "data_version_date": null,
       "is_season_start": false
