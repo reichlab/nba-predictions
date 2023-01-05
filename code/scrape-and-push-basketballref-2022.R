@@ -41,6 +41,7 @@ nbacsv <- tabs |>
   dplyr::select(-dplyr::starts_with(c("NA","First Round","Pre Play"))) |>
   dplyr::filter(!TEAM == "") |>
   mutate(# extract wins 
+    TEAM = ifelse(TEAM == "Los Angeles Clippers", "LA Clippers", TEAM),
     wins = round(as.numeric(W),0),
     ## extract playoff probability, take care of extreme values
     Playoffs = ifelse(Playoffs == "", 0, Playoffs),
