@@ -40,17 +40,16 @@ espn_names <- read_csv("code/espn-names.csv")
 nbacsv <- tabs |> 
   dplyr::select(-dplyr::starts_with(c("NA","First Round","Pre Play"))) |>
   dplyr::filter(!TEAM == "") |>
-  mutate(#unit = gsub( ".* ", "", TEAM),
-         # extract wins 
-         wins = round(as.numeric(W),0),
-         ## extract playoff probability, take care of extreme values
-         Playoffs = ifelse(Playoffs == "", 0, Playoffs),
-         make_playoffs = as.numeric(gsub( "%.*", "", Playoffs))/100,
-         ## extract finals win probability, take care of extreme values
-         `Win Finals` = ifelse(`Win Finals` == "", 0, `Win Finals`),
-         win_finals = as.numeric(gsub( "%.*", "", `Win Finals`))/100)  %>%  
-  dplyr::full_join(x=.,y=espn_names, by = c("TEAM"="Team"))
-
+  mutate(# extract wins 
+    wins = round(as.numeric(W),0),
+    ## extract playoff probability, take care of extreme values
+    Playoffs = ifelse(Playoffs == "", 0, Playoffs),
+    make_playoffs = as.numeric(gsub( "%.*", "", Playoffs))/100,
+    ## extract finals win probability, take care of extreme values
+    `Win Finals` = ifelse(`Win Finals` == "", 0, `Win Finals`),
+    win_finals = as.numeric(gsub( "%.*", "", `Win Finals`))/100)  %>%  
+  # add unit column with abbreviation based on team name
+  dplyr::full_join(x=.,y=espn_names, by = c("TEAM"="Team")) 
 message("writing data")
 filename <- paste0("model-output/BasketballRef/BasketballRef-", today, ".csv")
 write_csv(nbacsv, file=filename)
