@@ -15,24 +15,31 @@ today <- Sys.Date()
 
 ## read data, collapse to one DF
 message("reading and munging data")
-tabs <- read_html("https://www.espn.com/nba/story/_/page/BPI-Playoff-Odds/espn-nba-basketball-power-index-playoff-odds") |> 
+tabs <- read_html("https://www.espn.com/nba/bpi/_/view/projections") |> 
   html_table() |> 
-  (\(x) do.call(what=rbind, args=x))()
+  (\(x) do.call(what=cbind, args=x))() |> 
+  left_join(read_csv("code/espn-names.csv"))
+
+## read in and munge playoff probs
+tabs_playoffs <- read_html("https://www.espn.com/nba/bpi/_/view/playoffs") |> 
+  html_table() |> 
+  (\(x) do.call(what=cbind, args=x))()
+## move double-layered header rows to colnames
+colnames(tabs_playoffs) <- tabs_playoffs[1,]
+## remove first row of data and merge with unit names
+tabs_playoffs <- tabs_playoffs[-1,] |> 
+  left_join(read_csv("code/espn-names.csv")) |> 
+  mutate(win_finals = as.numeric(`WIN TITLE%`)/100) |> 
+  select(unit, win_finals)
+
 
 ## put in correct format
 nbacsv <- tabs |> 
-  mutate(unit = tolower(TEAM),
-         unit = ifelse(unit=="uth", "uta", unit),
-         # extract wins 
-         wins = gsub( "-.*", "", `WIN-LOSS`),
-         ## extract playoff probability, take care of extreme values
-         `PLAY-OFFS` = ifelse(`PLAY-OFFS` == ">99.9%", 100, `PLAY-OFFS`),
-         `PLAY-OFFS` = ifelse(`PLAY-OFFS` == "<0.1%", 0, `PLAY-OFFS`),
-         make_playoffs = as.numeric(gsub( "%.*", "", `PLAY-OFFS`))/100,
-         ## extract finals win probability, take care of extreme values
-         `NBATITLE` = ifelse(`NBATITLE` == ">99.9%", 100, `NBATITLE`),
-         `NBATITLE` = ifelse(`NBATITLE` == "<0.1%", 0, `NBATITLE`),
-         win_finals = as.numeric(gsub( "%.*", "", `NBATITLE`))/100) 
+  mutate(# extract wins 
+         wins = round(as.numeric(gsub( "-.*", "", `OVR W-L`))),
+         make_playoffs = as.numeric(`PLAYOFF%`)/100) |> 
+  left_join(tabs_playoffs) |> 
+  select(unit, wins, make_playoffs, win_finals)
 
 message("writing data")
 filename <- paste0("model-output/ESPN-BPI/ESPN-BPI-", today, ".csv")
@@ -40,8 +47,8 @@ write_csv(nbacsv, file=filename)
 
 bpi_json <- nba_csv_to_json(filename)
 
-## write out raw data
-write_csv(tabs, file=paste0("model-output/ESPN-BPI/espn-bpi-raw-", today, ".csv"))
+## write out raw data, commented out Dec 2022
+## write_csv(tabs, file=paste0("model-output/ESPN-BPI/espn-bpi-raw-", today, ".csv"))
 
 message("uploading data to zoltar")
 ## upload to zoltar
