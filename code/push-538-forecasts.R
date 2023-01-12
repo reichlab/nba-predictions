@@ -18,8 +18,8 @@ bpi_model_url <- "https://zoltardata.com/api/model/784/"
 ## load, transform and push data
 
 ## RAPTOR model
-raptor_files <- list.files("data/538-RAPTOR", full.names = TRUE) 
-raptor_dates <- list.files("data/538-RAPTOR") |> 
+raptor_files <- list.files("model-output/538-RAPTOR", full.names = TRUE) 
+raptor_dates <- list.files("model-output/538-RAPTOR") |> 
   substr(12, 21)
 raptor_jobs <- vector("list", length(raptor_files))
 
@@ -33,8 +33,8 @@ for(i in 1:length(raptor_files)) {
 }
 
 ## Elo model
-elo_files <- list.files("data/538-Elo", full.names = TRUE) 
-elo_dates <- list.files("data/538-Elo") |> 
+elo_files <- list.files("model-output/538-Elo", full.names = TRUE) 
+elo_dates <- list.files("model-output/538-Elo") |> 
   substr(9, 18)
 elo_jobs <- vector("list", length(elo_files))
 
