@@ -1,5 +1,5 @@
-## scrape basketball refrence prediction data from
-## https://www.basketball-reference.com/friv/playoff_prob.html
+## scrape 538-Elo and 538-RAPTOR prediction data from
+## https://projects.fivethirtyeight.com/2023-nba-predictions/
 ## and upload to zoltar
 
 library(rvest)

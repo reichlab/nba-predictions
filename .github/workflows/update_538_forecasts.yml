@@ -1,4 +1,4 @@
-name: Update ESPN forecast
+name: Update 538 forecasts
 on:
   workflow_dispatch:
   schedule:
