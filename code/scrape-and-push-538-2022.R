@@ -41,7 +41,7 @@ raptor.df <- as.data.frame(t(sapply(raptor,c))) %>%
 nbacsv_elo <- elo.df |> 
   dplyr::transmute(TEAM = tolower(name),
                    unit = TEAM,
-                   wins = as.numeric(wins),
+                   wins = round(as.numeric(wins)),
                    make_playoffs = as.numeric(make_playoffs),
                    win_finals = as.numeric(win_finals)
                    )
@@ -50,7 +50,7 @@ nbacsv_elo <- elo.df |>
 nbacsv_raptor <- raptor.df |> 
   dplyr::transmute(TEAM = tolower(name),
                    unit = TEAM,
-                   wins = as.numeric(wins),
+                   wins = round(as.numeric(wins)),
                    make_playoffs = as.numeric(make_playoffs),
                    win_finals = as.numeric(win_finals)
   )
