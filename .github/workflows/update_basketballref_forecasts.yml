@@ -1,4 +1,4 @@
-name: Update ESPN forecast
+name: Update BasketballReference forecast
 on:
   workflow_dispatch:
   schedule:
