@@ -33,6 +33,9 @@ read_html("https://projects.fivethirtyeight.com/2023-nba-predictions/") |>
   html_elements(".pct:nth-child(12)") |> 
   html_text2()
 
+read_html("https://projects.fivethirtyeight.com/2023-nba-predictions/") |> 
+  html_elements("td") 
+
 
 ## specifying a different forecast model
 
