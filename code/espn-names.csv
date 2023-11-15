@@ -1,31 +1,31 @@
-Team,unit
-Boston Celtics,bos
-Cleveland Cavaliers,cle
-Milwaukee Bucks,mil
-Philadelphia 76ers,phi
-Memphis Grizzlies,mem
-Phoenix Suns,phx
-Brooklyn Nets,bkn
-Denver Nuggets,den
-Dallas Mavericks,dal
-New Orleans Pelicans,no
-Utah Jazz,uta
-New York Knicks,ny
-Sacramento Kings,sac
-Portland Trail Blazers,por
-LA Clippers,lac
-Atlanta Hawks,atl
-Golden State Warriors,gs
-Minnesota Timberwolves,min
-Miami Heat,mia
-Toronto Raptors,tor
-Indiana Pacers,ind
-Chicago Bulls,chi
-Los Angeles Lakers,lal
-Washington Wizards,wsh
-Oklahoma City Thunder,okc
-Orlando Magic,orl
-Charlotte Hornets,cha
-San Antonio Spurs,sa
-Houston Rockets,hou
-Detroit Pistons,det
+Team,unit,messenger_team
+Boston Celtics,bos,Celtics
+Cleveland Cavaliers,cle,Cavaliers
+Milwaukee Bucks,mil,Bucks
+Philadelphia 76ers,phi,76ers
+Memphis Grizzlies,mem,Grizzlies
+Phoenix Suns,phx,Suns
+Brooklyn Nets,bkn,Nets
+Denver Nuggets,den,Nuggets
+Dallas Mavericks,dal,Mavericks
+New Orleans Pelicans,no,Pelicans
+Utah Jazz,uta,Jazz
+New York Knicks,ny,Knicks
+Sacramento Kings,sac,Kings
+Portland Trail Blazers,por,Blazers
+LA Clippers,lac,Clippers
+Atlanta Hawks,atl,Hawks
+Golden State Warriors,gs,Warriors
+Minnesota Timberwolves,min,T-Wolves
+Miami Heat,mia,Heat
+Toronto Raptors,tor,Raptors
+Indiana Pacers,ind,Pacers
+Chicago Bulls,chi,Bulls
+Los Angeles Lakers,lal,Lakers
+Washington Wizards,wsh,Wizards
+Oklahoma City Thunder,okc,Thunder
+Orlando Magic,orl,Magic
+Charlotte Hornets,cha,Hornets
+San Antonio Spurs,sa,Spurs
+Houston Rockets,hou,Rockets
+Detroit Pistons,det,Pistons

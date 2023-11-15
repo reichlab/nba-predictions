@@ -13,17 +13,28 @@ zoltar_authenticate(zoltar_connection, Sys.getenv("Z_USERNAME"), Sys.getenv("Z_P
 ## urls obtained from API: https://zoltardata.com/api/project/328/
 elo_model_url <- "https://zoltardata.com/api/model/772/" 
 raptor_model_url <- "https://zoltardata.com/api/model/771/" 
-bpi_model_url <- "https://zoltardata.com/api/model/784/"
 
 ## load, transform and push data
 
 ## RAPTOR model
-raptor_files <- list.files("model-output/538-RAPTOR", full.names = TRUE) 
-raptor_dates <- list.files("model-output/538-RAPTOR") |> 
+raptor_files <- list.files("model-output/538-RAPTOR", 
+                           pattern = "538-RAPTOR-20*",
+                           full.names = TRUE) 
+raptor_dates <- list.files("model-output/538-RAPTOR", pattern = "538-RAPTOR-20*") |> 
   substr(12, 21)
 raptor_jobs <- vector("list", length(raptor_files))
 
+## get all timezeroes
+project_url <- "https://zoltardata.com/api/project/328/"
+all_t0 <- timezeros(zoltar_connection, project_url)
+
+
 for(i in 1:length(raptor_files)) {
+  if(!(as.Date(raptor_dates[i]) %in% all_t0$timezero_date)){
+    create_timezero(zoltar_connection, project_url,
+                    timezero_date = raptor_dates[i], 
+                    data_version_date = NA)
+  }
   raptor_json <- nba_csv_to_json(raptor_files[i])
   job_url <- upload_forecast(zoltar_connection, 
                              raptor_model_url,
@@ -33,8 +44,11 @@ for(i in 1:length(raptor_files)) {
 }
 
 ## Elo model
-elo_files <- list.files("model-output/538-Elo", full.names = TRUE) 
-elo_dates <- list.files("model-output/538-Elo") |> 
+elo_files <- list.files("model-output/538-Elo", 
+                        pattern = "538-Elo-20*",
+                        full.names = TRUE) 
+elo_dates <- list.files("model-output/538-Elo", 
+                        pattern = "538-Elo-20*") |> 
   substr(9, 18)
 elo_jobs <- vector("list", length(elo_files))
 

@@ -16,13 +16,6 @@ nba_csv_to_json <- function(filename) {
   require(jsonlite)
   nbacsv <- read.csv(filename, row.names = NULL)
   
-  ## make point forecasts for discrete target
-  nbacsv_discrete <- nbacsv |> 
-    select(unit, wins) |>
-    rename(`season wins` = wins) |> 
-    pivot_longer(cols = -unit, names_to = "target") |> 
-    mutate(class = "point")
-
   ## make binned forecasts for binary targets
   nbacsv_binary <- nbacsv |> 
     select(unit, make_playoffs, win_finals) |>
@@ -41,14 +34,6 @@ nba_csv_to_json <- function(filename) {
   }
   nbacsv_binary$prob <- problist
   
-  ## make discrete nested tibble
-  discrete_nest <- tibble(nbacsv_discrete[,c("unit", "target", "class")])
-  discrete_preds <- replicate(nrow(discrete_nest), list(NULL), simplify=FALSE)
-  for(i in 1:length(discrete_preds)){
-    discrete_preds[[i]] <- as.list(nbacsv_discrete[i,"value"])
-  }
-  discrete_nest$prediction <- discrete_preds
-
   ## make nested tibble for binary targets
   binary_nest <- tibble(nbacsv_binary[,c("unit", "target", "class")])
   binary_preds <- replicate(nrow(binary_nest), list(NULL), simplify=FALSE)
@@ -59,7 +44,26 @@ nba_csv_to_json <- function(filename) {
   binary_nest$prediction <- binary_preds
   
   
-  nba_nest <- bind_rows(discrete_nest, binary_nest)
+  if("wins" %in% colnames(nbacsv)){
+    ## make point forecasts for discrete target
+    nbacsv_discrete <- nbacsv |> 
+      select(unit, wins) |>
+      rename(`season wins` = wins) |> 
+      pivot_longer(cols = -unit, names_to = "target") |> 
+      mutate(class = "point")
+    
+    ## make discrete nested tibble
+    discrete_nest <- tibble(nbacsv_discrete[,c("unit", "target", "class")])
+    discrete_preds <- replicate(nrow(discrete_nest), list(NULL), simplify=FALSE)
+    for(i in 1:length(discrete_preds)){
+      discrete_preds[[i]] <- as.list(nbacsv_discrete[i,"value"])
+    }
+    discrete_nest$prediction <- discrete_preds
+
+    nba_nest <- bind_rows(discrete_nest, binary_nest)
+  } else {
+    nba_nest <- binary_nest
+  }
   
   # toJSON(list(meta = NULL, predictions = discrete_nest),
   #        auto_unbox = TRUE, pretty=TRUE)
