@@ -52,6 +52,8 @@ mess_only <- mess_only_raw |>
   left_join(espn_names, by=c("Team" = "messenger_team")) |> 
   mutate(
     wins = round(W),
+    `PO%` = ifelse(`PO%` == "—", "0", `PO%`),
+    `Champ%` = ifelse(`Champ%` == "—", "0", `Champ%`),
     make_playoffs = as.numeric(gsub( ">|<", "", `PO%`))/100,
     win_finals = as.numeric(gsub( ">|<", "", `Champ%`))/100
   )
@@ -59,6 +61,8 @@ mess_only <- mess_only_raw |>
 mess_comp <- mess_comp_raw |> 
   left_join(espn_names, by=c("Team" = "messenger_team")) |> 
   mutate(
+    `Playoffs%` = ifelse(`Playoffs%` == "—", "0", `Playoffs%`),
+    `Champ%` = ifelse(`Champ%` == "—", "0", `Champ%`),
     make_playoffs = as.numeric(gsub( ">|<", "", `Playoffs%`))/100,
     win_finals = as.numeric(gsub( ">|<", "", `Champ%`))/100
   )
