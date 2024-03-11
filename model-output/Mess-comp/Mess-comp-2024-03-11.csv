@@ -23,9 +23,9 @@ Jazz,West,-2.943142797,-3.706614474,—,0.489932372,0.086480361,<0.1,Utah Jazz,u
 Nets,East,-2.946981841,-2.526884019,—,3.679612108,0.148696812,<0.1,Brooklyn Nets,bkn,0.03679612108,0.001
 Hawks,East,-3.3278881830000002,-0.781877439,—,15.05061526,0.366561406,0.104935209,Atlanta Hawks,atl,0.1505061526,0.00104935209
 Raptors,East,-3.782780815,-1.767726405,—,0.130009689,<0.1,<0.1,Toronto Raptors,tor,0.00130009689,0.001
-Spurs,West,-5.406662996,-9.3990321,—,—,<0.1,<0.1,San Antonio Spurs,sa,NA,0.001
+Spurs,West,-5.406662996,-9.3990321,—,0,<0.1,<0.1,San Antonio Spurs,sa,0,0.001
 Grizzlies,West,-6.77313945,-3.589187502,—,<0.1,<0.1,<0.1,Memphis Grizzlies,mem,0.001,0.001
 Blazers,West,-7.348715124,-8.513262887,—,<0.1,<0.1,<0.1,Portland Trail Blazers,por,0.001,0.001
 Pistons,East,-8.058432702,-8.810829659,—,<0.1,<0.1,<0.1,Detroit Pistons,det,0.001,0.001
-Wizards,East,-8.502185888,-6.606684776,—,—,<0.1,<0.1,Washington Wizards,wsh,NA,0.001
+Wizards,East,-8.502185888,-6.606684776,—,0,<0.1,<0.1,Washington Wizards,wsh,0,0.001
 Hornets,East,-10.30347083,-8.646115956,—,<0.1,<0.1,<0.1,Charlotte Hornets,cha,0.001,0.001
