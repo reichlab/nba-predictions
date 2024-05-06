@@ -51,7 +51,7 @@ espn_names <- read_csv("code/espn-names.csv")
 mess_only <- mess_only_raw |> 
   left_join(espn_names, by=c("Team" = "messenger_team")) |> 
   mutate(
-    wins = round(W),
+    #wins = round(W),
     #`PO%` = ifelse(`PO%` == "—", "0", `PO%`),
     `Champ%` = ifelse(`Champ%` == "—", "0", `Champ%`),
     make_playoffs = ifelse(`CF%` == "—", "0", 1),
