@@ -1,0 +1,31 @@
+Team,Conf.,RS,PO,PO%,Rd 2%,CF%,Fin%,Champ%,Team.y,unit,make_playoffs,win_finals
+Celtics,East,12.95528145,8.884087899,100,100,100,88,61.05,Boston Celtics,bos,1,0.6104999999999999
+T-Wolves,West,7.279261022,6.753923054,100,100,46.4,31.55,13.35,Minnesota Timberwolves,min,1,0.1335
+Thunder,West,7.472837512,6.034599733,100,100,36.45,17.4,7.2,Oklahoma City Thunder,okc,1,0.07200000000000001
+Nuggets,West,4.494481323,5.688423219,100,100,53.6,33.3,12.5,Denver Nuggets,den,1,0.125
+Heat,East,1.352136577,2.319049593,100,—,—,—,0,Miami Heat,mia,0,0
+76ers,East,-0.941668926,2.280572368,100,—,—,—,0,Philadelphia 76ers,phi,0,0
+Lakers,West,2.116756169,2.235929481,100,—,—,—,0,Los Angeles Lakers,lal,0,0
+Mavericks,West,4.715717267,2.22012004,100,100,63.55,17.75,3,Dallas Mavericks,dal,1,0.03
+Pelicans,West,4.107895171,2.109065353,100,—,—,—,0,New Orleans Pelicans,no,0,0
+Suns,West,5.295646841,1.739459067,100,—,—,—,0,Phoenix Suns,phx,0,0
+Warriors,West,2.530903789,1.531258906,—,—,—,—,0,Golden State Warriors,gs,0,0
+Knicks,East,2.544878992,1.307496816,100,100,55.25,6.75,1.95,New York Knicks,ny,1,0.0195
+Bucks,East,1.611266567,1.302466452,100,—,—,—,0,Milwaukee Bucks,mil,0,0
+Pacers,East,3.535164763,0.937216542,100,100,44.75,5.25,0.95,Indiana Pacers,ind,1,0.0095
+Magic,East,2.125322089,0.7420834,100,—,—,—,0,Orlando Magic,orl,0,0
+Cavaliers,East,1.52352351,0.714691662,100,100,—,—,0,Cleveland Cavaliers,cle,0,0
+Kings,West,3.06961727,0.656137855,—,—,—,—,0,Sacramento Kings,sac,0,0
+Clippers,West,0.969354891,0.52129042,100,—,—,—,0,LA Clippers,lac,0,0
+Bulls,East,-0.712581642,-0.431207198,—,—,—,—,0,Chicago Bulls,chi,0,0
+Rockets,West,0.022636609,-1.849981374,—,—,—,—,0,Houston Rockets,hou,0,0
+Hawks,East,-3.843725567,-2.401409916,—,—,—,—,0,Atlanta Hawks,atl,0,0
+Nets,East,-3.936863379,-3.939092911,—,—,—,—,0,Brooklyn Nets,bkn,0,0
+Raptors,East,-9.235385673,-4.942812182,—,—,—,—,0,Toronto Raptors,tor,0,0
+Grizzlies,West,-8.477025216,-5.459055198,—,—,—,—,0,Memphis Grizzlies,mem,0,0
+Jazz,West,-6.19298309,-5.482529957,—,—,—,—,0,Utah Jazz,uta,0,0
+Spurs,West,-2.825807328,-7.261334018,—,—,—,—,0,San Antonio Spurs,sa,0,0
+Wizards,East,-8.330691334,-8.082301718,—,—,—,—,0,Washington Wizards,wsh,0,0
+Pistons,East,-7.619712855,-9.103576197,—,—,—,—,0,Detroit Pistons,det,0,0
+Hornets,East,-10.58444449,-9.184904267,—,—,—,—,0,Charlotte Hornets,cha,0,0
+Blazers,West,-9.469551547,-10.15602179,—,—,—,—,0,Portland Trail Blazers,por,0,0
